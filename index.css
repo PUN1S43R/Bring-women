@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-brand-pink: #D94F7A;
+  --color-brand-pink-hover: #C23E66;
+  --color-brand-pink-light: #FFF0F4;
+  --color-brand-brown: #7B6358;
+  --color-brand-brown-hover: #675147;
+  --color-brand-brown-light: #F7F1EF;
+  --color-brand-bg: #FFF8FA;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-neutral-800 bg-brand-bg m-0 p-0 font-sans;
+  }
+}
+
+@layer components {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
