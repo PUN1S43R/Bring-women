@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: being-women-shop
+    env: node
+    buildCommand: npm run build
+    startCommand: npm start
+    disk:
+      name: sqlite-db
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/database.sqlite
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: PAYTM_MID
+        sync: false
+      - key: VITE_PAYTM_MID
+        sync: false
+      - key: PAYTM_MERCHANT_KEY
+        sync: false
+      - key: PAYTM_WEBSITE
+        value: DEFAULT
+      - key: PAYTM_INDUSTRY_TYPE
+        value: Retail
+      - key: PAYTM_ENVIRONMENT
+        value: PRODUCTION
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: VITE_RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: VITE_SUPABASE_URL
+        sync: false
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: false
